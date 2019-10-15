@@ -7,7 +7,20 @@ const findEvenIndex = array => {
     runningTotal = runningTotal + array[i];
     i++;
   }
-  return i - 1;
+  let middleIndex = i - 1;
+  const firstHalfTotal = array.slice(0, middleIndex).reduce((a, b) => a + b, 0);
+  const secondHalfTotal = array
+    .slice(middleIndex + 1, array.length)
+    .reduce((a, b) => a + b, 0);
+  console.log(`----${array}-----`);
+  console.log(`FIRST HALF: ${firstHalfTotal}`);
+  console.log(`SECOND HALF: ${secondHalfTotal}`);
+
+  if (firstHalfTotal === secondHalfTotal) {
+    return middleIndex;
+  } else {
+    return -1;
+  }
 };
 
 module.exports = findEvenIndex;
