@@ -16,4 +16,8 @@ describe("findEvenIndex", () => {
   it("Returns -1 in the edge case where no halfpoint is found", () => {
     expect(findEvenIndex([1, 2, 3, 4, 5, 6])).toEqual(-1);
   });
+
+  it("Edgecase where one half is empty this should be consider to be 0", () => {
+    expect(findEvenIndex([10, -80, 10, 10, 15, 35, 20])).toEqual(6);
+  });
 });
