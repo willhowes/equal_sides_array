@@ -1,5 +1,6 @@
 const findEvenIndex = array => {
-  return 1;
+  let halfway = array.length / 2;
+  return Math.floor(halfway);
 };
 
 module.exports = findEvenIndex;
